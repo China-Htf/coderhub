@@ -11,11 +11,11 @@ class authController {
       // 采用的算法
       algorithm: 'RS256'
     })
-    ctx.body = {
-      id,
-      name,
-      token
-    }
+    ctx.body = { id, name, token }
+  }
+
+  async success(ctx, next) {
+    ctx.body = '授权成功~'
   }
 }
 

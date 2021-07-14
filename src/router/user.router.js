@@ -10,10 +10,12 @@ const {
 } = require('../controller/user.controller.js')
 // 验证用户提交数据
 const {
-  verifyUser
+  verifyUser,
+  // 密码进行加密
+  handlePassword
 } = require('../middleware/user.middleware')
 
 // 创建用户 post 请求
-userRouter.post('/', verifyUser, create)
+userRouter.post('/', verifyUser, handlePassword,create)
 
 module.exports = userRouter
